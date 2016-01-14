@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>The Challenge</title>
+  <title>The Challenge - Universal Avenue</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= stylesheet_link_tag    'bootstrap.min' %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
@@ -14,13 +14,13 @@
         <header>
             <ul class="nav nav-pills">
               <li role="presentation">
-                <%= link_to "Geokit Rails", venues_path -%>
-              </li>
-              <li role="presentation">
                 <%= link_to "Bounds", bounds_path -%>
               </li>
               <li role="presentation">
                 <%= link_to "Reverse Geocoding", reverse_geocoding_path -%>
+              </li>
+              <li role="presentation">
+                <%= link_to "Geokit Rails", venues_path -%>
               </li>
             </ul>
         </header>
