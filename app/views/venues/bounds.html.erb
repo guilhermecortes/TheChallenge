@@ -1,8 +1,12 @@
-<h1>Geokit Rails</h1>
-<h3>Using distance from the origin point (50 miles)</h3>
+<h1>Bounds</h1>
+<h3>Suggested bounds from Geokit</h3>
+<%- if @ne && @sw -%>
+<h4>NorthEast: <%= @ne -%></h4>
+<h4>SouthWest: <%= @sw -%></h4>
+<%- end -%>
 
 <div class="row">
-    <%= form_tag('/venues', method: :get, class: 'navbar-form navbar-left') do %>
+    <%= form_tag('/bounds', method: :get, class: 'navbar-form navbar-left') do %>
         <div class="form-group">
             <%= select_tag :city, options_for_select([ "Stockholm", "London" ], params[:city]), class: 'form-control' -%>
         </div>

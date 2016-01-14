@@ -1,0 +1,38 @@
+<h1>Reverse Geocoding</h1>
+<h3>Using Google API with ajax</h3>
+
+<div class="row">
+    <%= form_tag('/reverse-geocoding', method: :get, class: 'navbar-form navbar-left', remote: true) do %>
+        <div class="form-group">
+            <%= select_tag :city, options_for_select([ "Stockholm", "London" ], params[:city]), class: 'form-control select-city' -%>
+        </div>
+        <%= submit_tag 'Search', class: 'btn btn-default' %>
+    <% end %>
+</div>
+
+<div class="row">
+    <table id="reverse-geocoding" class="table table-bordered table-hover">
+      <thead>
+          <tr>
+            <th>Name</th>
+            <th>Latitude</th>
+            <th>Longitude</th>
+          </tr>
+      </thead>
+      <%#- if @venues.blank? -%>
+      <tbody id="results">
+        <tr>
+          <td colspan="3">Please, choose a city.</td>
+        </tr>
+      </tbody>
+        <!--<tr>-->
+          <!--<%#- if params[:city] -%>-->
+          <!--<td colspan="3">Sorry, we don't find venues for this city.</td>-->
+          <!--<%#- else -%>-->
+          <!--<td colspan="3">Please, choose a city.</td>-->
+          <!--<%#- end -%>-->
+        <!--</tr>-->
+      <%#- else -%>
+      <%#- end -%>
+    </table>
+</div>

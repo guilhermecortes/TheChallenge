@@ -1,14 +1,31 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>TheChallenge</title>
+  <title>The Challenge</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag    'bootstrap.min' %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'jquery-1.9.1.min', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
 
-<%= yield %>
+    <div class="container">
+        <header>
+            <ul class="nav nav-pills">
+              <li role="presentation">
+                <%= link_to "Geokit Rails", venues_path -%>
+              </li>
+              <li role="presentation">
+                <%= link_to "Bounds", bounds_path -%>
+              </li>
+              <li role="presentation">
+                <%= link_to "Reverse Geocoding", reverse_geocoding_path -%>
+              </li>
+            </ul>
+        </header>
+        <%= yield %>
+    </div>
 
 </body>
 </html>

@@ -1,0 +1,30 @@
+var city = $('select#city').val();
+$('#results').html('');
+
+<%- @venues.each do |venue| -%>
+$.ajax({
+    method: "GET",
+    url: "https://maps.googleapis.com/maps/api/geocode/json?latlng=<%= venue.latitude -%>,<%= venue.longitude -%>"
+})
+.done(function(data) {
+    if(data.status == "OK"){
+//        console.log(data.results);
+        $(data.results).each(function(){
+//           console.log((this.formatted_address));
+            if(this.formatted_address.indexOf(city) > -1){
+                $('#results').append("<tr>" +
+                "<td><%= venue.name -%></td>"+
+                "<td><%= venue.latitude -%></td>"+
+                "<td><%= venue.longitude -%></td>"+
+                "<tr>");
+                return false; //end loop
+            }
+        });
+
+    }
+}).fail(function(){
+   alert('Error');
+});
+
+<%- end -%>
+
