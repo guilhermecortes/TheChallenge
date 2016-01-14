@@ -14,19 +14,27 @@
 <body>
 
     <div class="container">
-        <header>
-            <ul class="nav nav-pills">
-              <li role="presentation">
+      <nav class="navbar navbar-default">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <a href="/" class="navbar-brand">The Challenge</a>
+          </div>
+          <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+              <li>
                 <%= link_to "Bounds", bounds_path -%>
               </li>
-              <li role="presentation">
+              <li>
                 <%= link_to "Reverse Geocoding", reverse_geocoding_path -%>
               </li>
-              <li role="presentation">
+              <li>
                 <%= link_to "Geokit Rails", venues_path -%>
               </li>
             </ul>
-        </header>
+          </div>
+
+        </div>
+      </nav>
         <%= yield %>
     </div>
 
