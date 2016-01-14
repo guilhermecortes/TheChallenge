@@ -4,7 +4,7 @@
 <div class="row">
     <%= form_tag('/venues', method: :get, class: 'navbar-form navbar-left') do %>
         <div class="form-group">
-            <%= select_tag :city, options_for_select([ "Stockholm", "London" ], params[:city]), class: 'form-control' -%>
+            <%= select_tag :city, options_for_select([ "Stockholm", "London" ], params[:city]), class: 'select2' -%>
         </div>
         <%= submit_tag 'Search', class: 'btn btn-default' %>
     <% end %>
@@ -38,3 +38,7 @@
       <%- end -%>
     </table>
 </div>
+
+<script>
+    $('.select2').select2();
+</script>
