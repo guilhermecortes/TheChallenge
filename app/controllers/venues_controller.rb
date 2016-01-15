@@ -10,7 +10,7 @@ class VenuesController < ApplicationController
         unless params[:city].blank?
             #get suggested bounds through geokit
             if params[:city].downcase == 'london'
-                res = Geokit::Geocoders::GoogleGeocoder.geocode('Greather London')
+                res = Geokit::Geocoders::GoogleGeocoder.geocode('Greater London')
             else
                 res = Geokit::Geocoders::GoogleGeocoder.geocode(params[:city])
             end
